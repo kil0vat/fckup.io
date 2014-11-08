@@ -19,7 +19,7 @@ class TaskResource(ModelResource):
           "reviewer": ALL_WITH_RELATIONS,
           "participant": ALL_WITH_RELATIONS,
         }
-        authentication = SessionAuthentication()
+        #authentication = SessionAuthentication()
 
     def dehydrate(self, bundle):
         bundle.data['creator'] = bundle.obj.creator.id if bundle.obj.creator else None
