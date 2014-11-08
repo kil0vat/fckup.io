@@ -11,22 +11,16 @@ if (typeof window.angular !== 'undefined') {
       var allDeals = tasks.objects;
 
       $scope.deals = _.filter(allDeals, {complete: false});
-      $rootScope.fuckups = _.filter(allDeals, {fucked_up: true});
     });
-
-    // $scope.fuckups = [
-    //   {title: "Don't drink", deadline: new Date()},
-    //   {title: "Love my wife", deadline: new Date()}
-    // ]
 
     $scope.addDeal = function(){
       var newDeal = {
         title: $scope.newDeal.title,
         deadline: $scope.newDeal.deadline
       };
-      
-      dealsDS.addNewDeal(newDeal).then(function(){
-        $scope.deals.push($scope.newDeal);
+
+      dealsDS.addNewDeal(newDeal).then(function(data){
+        $scope.deals.push(data);
 
         $scope.newDeal.title = null;
         $scope.newDeal.deadline = null;

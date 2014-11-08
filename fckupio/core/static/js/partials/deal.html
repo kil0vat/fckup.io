@@ -1,28 +1,33 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-2 sidebar centered">
+
+  <div class="row" ng-if="deal">
+    <div class="sidebar centered">
       <div>
-        <img src="img/fuckblur.png" class="logo" width="120" height="120">
-        <p>
-          Don't fuck up. Don't even try.
-        </p>
+        <img ng-src="{{ staticUrl + 'img/fckblur.png'}}" class="logo" width="120" height="120">
       </div>
     </div>
-    <div class="col-md-6 col-md-offset-1 site">
-
+    <div class="col-md-6 col-md-offset-3 site" style="margin-top: 50px;">
       <div class="site-title clearfix">
-        <h2>Deal with dude.</h2>
-        <!-- <span ng-click="toggleMenu()" class="glyphicon glyphicon-tasks menu-btn"></span> -->
+        <h2>Deal with Dude</h2>
       </div>
 
       <div class="post">
         <h4 ng-bind="deal.title"></h4>
-        <small ng-bind="deal.deadline | date:'MMM d, h:mm a'">7 Nov 2014, 5:00 pm</small>
-        <!-- <div class="pull-right">
-          <span>With </span><img src="" width="30" height="40">
-        </div> -->
+        <br>
+        <smal>Due to</smal>
+        <smal ng-bind="deal.deadline | date:'MMM d, h:mm a'">7 Nov 2014, 5:00 pm</smal>
+        <div ng-show="true">
+          <a href="" class="btn btn-sm btn-primary btn-danger pull-right" ng-click="fuckedUp()">Fucked-up</a>
+          <a href="" class="btn btn-sm btn-primary btn-fup pull-right" ng-click="complete()">Done</a>
+        </div>
       </div>
-
     </div>
   </div>
+
+  <div class="row" ng-if="!deal">
+    <div class="sidebar centered">
+      Permission denied, bitch!
+    </div>
+  </div>
+
 </div>

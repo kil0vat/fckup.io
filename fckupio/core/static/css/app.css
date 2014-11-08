@@ -174,12 +174,13 @@ body {
 
 .post .glyphicon {
 	font-size: 24px;
-	color: #7f7ea8
+	color: #7f7ea8;
 }
 
 .btn-fup {
   background: #2F8B89;
 }
+
 
 footer {
   position: fixed;

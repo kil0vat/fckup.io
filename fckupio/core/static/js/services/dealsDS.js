@@ -15,13 +15,9 @@ if (typeof angular !== 'undefined') {
       return $restangular.all('task').post(deal);
     };
 
-    this.completeDeal = function (deal, dealId) {
-      return $restangular.one('task', dealId).customPOST(deal, 'complete');
-    }
-
     this.getDeal = function(dealId){
       return $restangular.one('task', dealId).get();
-    }
+    };
 
   }]);
 }
