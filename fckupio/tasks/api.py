@@ -29,6 +29,7 @@ class TaskResource(ModelResource):
 
     def hydrate(self, bundle):
         bundle.obj.creator = bundle.request.user
+        bundle.obj.participant = bundle.request.user
         return bundle
 
 
