@@ -19,7 +19,6 @@ angular.xcodeproj
 libpeerconnection.log
 npm-debug.log
 /tmp/
-/scripts/bower/bower-*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
