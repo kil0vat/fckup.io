@@ -65,4 +65,5 @@ coverage.xml
 docs/_build/
 # PyBuilder
 target/
+macOS/
 *.sqlite3
