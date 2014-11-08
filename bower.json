@@ -19,6 +19,7 @@
     "angular-ui-router": "~0.2.11",
     "restangular": "~1.4.0",
     "animate.css": "~3.2.0",
-    "angular-sweetalert": "~1.0.3"
+    "angular-sweetalert": "~1.0.3",
+    "font-awesome": "~4.2.0"
   }
 }
