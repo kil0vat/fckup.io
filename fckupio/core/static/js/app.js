@@ -32,7 +32,10 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
           $scope.deal.complete = true;
           $scope.deal.fucked_up = false;
           $scope.deal.put().then(function(){
-            showMessage();
+            showMessage(true, {
+              title: "Greetings, dude!",
+              text: "You've just approved the deal! Nice work",
+            });
           });
         }
       };
@@ -41,15 +44,21 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
         if($scope.deal.id){
           $scope.deal.complete = true;
           $scope.deal.fucked_up = true;
-          $scope.deal.put();
+          $scope.deal.put().then(function(){
+            showMessage(false, {
+              title: "Nice job, dude!",
+              text: "You've just made an pain in the ass for your companion. LOL",
+            });
+          });
         }
       };
 
-      function showMessage(){
+      function showMessage(flag, options){
+        var image = flag ? 'img/smiling.png' : 'img/you_are_dead.png';
         SweetAlert.swal({
-          title: "Greetings, dude!",
-          text: "You've just approved deal! Nice work",
-          imageUrl: staticUrl + 'img/smiling.png'
+          title: options.title,
+          text: options.text,
+          imageUrl: staticUrl + image
         },function(){
           $state.go("app");
         });

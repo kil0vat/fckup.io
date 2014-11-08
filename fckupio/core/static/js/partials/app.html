@@ -19,7 +19,8 @@
         <h4 ng-bind="deal.title"></h4>
         <small ng-bind="deal.deadline | date:'MMM d, h:mm a'">7 Nov 2014, 5:00 pm</small>
       </div>
-      <div ng-if="!deals" class="post no-deals">
+
+      <div ng-show="!deals || deals.length === 0" class="post no-deals">
         <h4>There is no deals. Add one in the form bellow, dude.</h4>
       </div>
 
