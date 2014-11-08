@@ -30,10 +30,21 @@ class TaskResource(ModelResource):
         bundle.data['reviewer'] = {'pk': bundle.obj.reviewer.id} if bundle.obj.reviewer else None
         return bundle
 
-    def hydrate(self, bundle):
-        bundle.obj.creator = bundle.request.user
-        bundle.obj.participant = bundle.request.user
-        return bundle
+    #def hydrate(self, bundle):
+        #bundle.obj.creator = bundle.request.user
+        #bundle.obj.participant = bundle.request.user
+        #return bundle
+
+    def obj_create(self, bundle, **kwargs):
+        return super(TaskResource, self).obj_create(bundle,
+                participant=bundle.request.user,
+                creator=bundle.request.user)
+
+    def get_object_list(self, request):
+        result = super(TaskResource, self).get_object_list(request)
+        if not request.path[-1].isdigit(): # hack
+            result = result.filter(participant=request.user)
+        return result
 
 
 class CreatorResource(ModelResource):
