@@ -41,15 +41,18 @@ class CreatorResource(ModelResource):
         queryset = User.objects.all()
         resource_name = 'creator'
         filtering = { "id": ALL }
+        authorization = Authorization()
 
 class ReviewerResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
         resource_name = 'reviewer'
         filtering = { "id": ALL }
+        authorization = Authorization()
 
 class ParticipantResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
         resource_name = 'participant'
         filtering = { "id": ALL }
+        authorization = Authorization()
