@@ -2,8 +2,7 @@
   <div class="row">
     <div class="col-md-2 sidebar">
       <div>
-        <img src="" class="logo" width="80" height="80">
-        <h4>Fckup.io</h4>
+        <img src="img/fuckblur.png" class="logo" width="120" height="120">
         <p>
           Don't fuck up. Don't even try.
         </p>
@@ -18,6 +17,9 @@
       <div ng-repeat="deal in deals" class="post">
         <h4 ng-bind="deal.title"></h4>
         <small ng-bind="deal.deadline | date:'MMM d, h:mm a'">7 Nov 2014, 5:00 pm</small>
+        <div class="pull-right">
+          <span>With </span><img src="" width="30" height="40">
+        </div>
       </div>
 
 
@@ -31,7 +33,7 @@
               <input type="date" class="form-control" ng-model="newDeal.deadline" placeholder="Deadline">
             </div>
             <div class="col-sm-2">
-              <button type="button" class="btn btn-primary" ng-click="addDeal()">Add one</button>
+              <button type="button" class="btn btn-primary btn-fup" ng-click="addDeal()">Add one</button>
             </div>
           </form>
         </div>
@@ -40,6 +42,9 @@
     </div><!-- --/row ---->
     <div class="col-md-3 sidebar">
       <h4>Your fuck-ups</h4>
+      <ul>
+
+      </ul>
     </div>
   </div>
 </div>

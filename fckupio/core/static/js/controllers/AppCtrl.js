@@ -6,14 +6,10 @@ if (typeof window.angular !== 'undefined') {
   angular.appControllers.controller('AppCtrl', ['$scope', '$rootScope', '$state', 'dealsDS', function ($scope, $rootScope, $state, dealsDS) {
     $scope.tasks = "LOLAAAA";
 
-    // TasksDS.getAllTasks().then(function(tasks){
-    //   $scope.tasks = tasks;
-    // });
-
-    $scope.deals = [
-      {title: "Don't drink teckila", deadline: new Date()},
-      {title: "Buy an a new liver", deadline: new Date()}
-    ];
+    dealsDS.getAllDeals().then(function(tasks){
+      debugger;
+      $scope.deals = tasks.objects;
+    });
 
     $scope.addDeal = function(){
       $scope.deals.push($scope.newDeal);
