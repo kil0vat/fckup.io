@@ -25,9 +25,9 @@ class TaskResource(ModelResource):
         #authentication = SessionAuthentication()
 
     def dehydrate(self, bundle):
-        bundle.data['creator'] = bundle.obj.creator.id if bundle.obj.creator else None
-        bundle.data['participant'] = bundle.obj.participant.id if bundle.obj.participant else None
-        bundle.data['reviewer'] = bundle.obj.reviewer.id if bundle.obj.reviewer else None
+        bundle.data['creator'] = {'pk': bundle.obj.creator.id} if bundle.obj.creator else None
+        bundle.data['participant'] = {'pk': bundle.obj.participant.id} if bundle.obj.participant else None
+        bundle.data['reviewer'] = {'pk': bundle.obj.reviewer.id} if bundle.obj.reviewer else None
         return bundle
 
     def hydrate(self, bundle):
