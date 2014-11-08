@@ -11,7 +11,6 @@ if (typeof window.angular !== 'undefined') {
       var allDeals = tasks.objects;
 
       $scope.deals = _.filter(allDeals, {complete: false});
-      debugger;
       $rootScope.fuckups = _.filter(allDeals, {fucked_up: true});
     });
 
