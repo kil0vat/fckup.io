@@ -11,7 +11,7 @@ task_resource = TaskResource()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', index, name='index'),
-    url(r'^app/$', app, name='app'),
+    url(r'^app$', app, name='app'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(task_resource.urls)),
