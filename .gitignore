@@ -66,4 +66,4 @@ docs/_build/
 # PyBuilder
 target/
 macOS/
-db.sqlite3
+*.sqlite3
