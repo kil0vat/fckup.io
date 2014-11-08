@@ -61,4 +61,7 @@
 
 <script type="text/javascript" charset="utf-8">
     window.staticUrl = "{% static ""%}";
+   {% if request.user.is_authenticated %}
+    window.userId = {{request.user.id }}
+   {% endif %}
 </script>
