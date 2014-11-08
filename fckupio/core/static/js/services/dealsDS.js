@@ -6,7 +6,7 @@ if (typeof angular !== 'undefined') {
   angular.appServices.service('dealsDS', ['$rootScope','Restangular', function($rootScope, $restangular) {
     'use strict';
 
-    var dealsData = $restangular.all('api/task');
+    var dealsData = $restangular.one('api/task');
 
     this.getAllDeals = function () {
       return dealsData.get();

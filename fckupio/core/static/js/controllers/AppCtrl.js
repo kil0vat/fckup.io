@@ -7,9 +7,16 @@ if (typeof window.angular !== 'undefined') {
     $scope.tasks = "LOLAAAA";
 
     dealsDS.getAllDeals().then(function(tasks){
-      debugger;
-      $scope.deals = tasks.objects;
+      var allDeals = tasks.objects;
+
+      $scope.deals = _.filter(allDeals, {completed: false});
+      $scope.fuckups = _.filter(allDeals, {fuckuped: true});
     });
+
+    // $scope.fuckups = [
+    //   {title: "Don't drink", deadline: new Date()},
+    //   {title: "Love my wife", deadline: new Date()}
+    // ]
 
     $scope.addDeal = function(){
       $scope.deals.push($scope.newDeal);

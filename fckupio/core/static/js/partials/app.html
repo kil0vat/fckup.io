@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-2 sidebar">
+    <div class="col-md-2 sidebar centered">
       <div>
         <img src="img/fuckblur.png" class="logo" width="120" height="120">
         <p>
@@ -12,14 +12,18 @@
 
       <div class="site-title clearfix">
         <h2>Current deals</h2>
+        <span ng-click="rightPaneActive = !rightPaneActive" class="glyphicon glyphicon-tasks menu-btn"></span>
       </div>
 
       <div ng-repeat="deal in deals" class="post">
         <h4 ng-bind="deal.title"></h4>
         <small ng-bind="deal.deadline | date:'MMM d, h:mm a'">7 Nov 2014, 5:00 pm</small>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
           <span>With </span><img src="" width="30" height="40">
-        </div>
+        </div> -->
+      </div>
+      <div ng-if="!deals" class="post no-deals">
+        <h4>There is no deals. Add one in the form bellow, dude.</h4>
       </div>
 
 
@@ -37,14 +41,21 @@
             </div>
           </form>
         </div>
-
       </div><!-- /col-md-6 -->
-    </div><!-- --/row ---->
-    <div class="col-md-3 sidebar">
-      <h4>Your fuck-ups</h4>
-      <ul>
+    </div>
 
+    <div class="col-md-3 sidebar centered" ng-show="rightPaneActive" ng-class="{'animated flipInX': rightPaneActive}">
+      <img src="img/fuckblur.png" class="logo" width="80" height="80" class="img-rounded">
+      <h4>Hello, Nick!</h4>
+      <a href="" class="btn btn-sm btn-primary">Logout</a>
+      <hr>
+      <h5>Your fuck-ups, bitch:</h5>
+      <ul class="list-unstyled">
+        <li ng-repeat="deal in fuckups">
+          - {{ deal.title }}
+        </li>
       </ul>
+      <span>Total: {{ fuckups.length }}</span>
     </div>
   </div>
 </div>
