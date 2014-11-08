@@ -11,6 +11,7 @@ class Task(models.Model):
     deadline = models.DateTimeField(blank=False)
 
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
-    complte = models.BooleanField(default=False)
+    complete = models.BooleanField(default=False)
+    fucked_up = models.BooleanField(default=False)
