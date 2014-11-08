@@ -57,11 +57,11 @@
   <script src="{% static 'js/services/dealsDS.js' %}"></script>
 
 </body>
-</html>
-
 <script type="text/javascript" charset="utf-8">
     window.staticUrl = "{% static ""%}";
    {% if request.user.is_authenticated %}
-    window.userId = {{request.user.id }}
+    window.userId = {{request.user.id}}
    {% endif %}
 </script>
+</html>
+
