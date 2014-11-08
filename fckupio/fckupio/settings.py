@@ -87,3 +87,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 APPEND_SLASH = False
+TASTYPIE_ALLOW_MISSING_SLASH = True
