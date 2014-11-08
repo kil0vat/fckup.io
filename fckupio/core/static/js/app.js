@@ -55,5 +55,5 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
         });
       }
     } }
-
+  );
   }]);
