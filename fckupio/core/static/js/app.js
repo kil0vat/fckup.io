@@ -24,6 +24,7 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
 
         dealsDS.getDeal($stateParams.id).then(function(data){
           $scope.deal = data;
+          $scope.hideButtons = $scope.deal.participant.pk !== window.userId;
         }).catch(function(){});
 
         $scope.complete = function(){
@@ -41,7 +42,6 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
             $scope.deal.put();
           }
         };
-
       }
     });
 

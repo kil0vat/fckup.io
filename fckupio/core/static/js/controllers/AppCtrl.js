@@ -11,6 +11,8 @@ if (typeof window.angular !== 'undefined') {
       var allDeals = tasks.objects;
 
       $scope.deals = _.filter(allDeals, {complete: false});
+      debugger;
+      $rootScope.fuckups = _.filter(allDeals, {fucked_up: true});
     });
 
     $scope.addDeal = function(){
@@ -26,6 +28,10 @@ if (typeof window.angular !== 'undefined') {
         $scope.newDeal.deadline = null;
       })
     };
+
+    $scope.goToDeal = function(dealId){
+      $state.go('deal', {id: dealId});
+    }
 
     $scope.toggleMenu = function(){
       $rootScope.rightPaneActive = !$rootScope.rightPaneActive
