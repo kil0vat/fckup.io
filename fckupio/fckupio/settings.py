@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'tastypie',
     'core',
     'tasks'
@@ -89,3 +90,11 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 APPEND_SLASH = False
 TASTYPIE_ALLOW_MISSING_SLASH = True
+
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.Facebook2OAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+SOCIAL_AUTH_FACEBOOK_KEY = '1497852830500127'
+SOCIAL_AUTH_FACEBOOK_SECRET = '8205a285787b94af98ec540f00530319'
