@@ -1,0 +1,100 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fckup.io - we dont give a fuck</title>
+  <meta name="author" content="Ostap Golyaka" />
+  <meta name="description" content="Fckup.io landing page" />
+  <meta name="keywords"  content="fuck,up,off" />
+  <meta name="Resource-type" content="Document" />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/css/jquery.fullPage.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/css/style.css' %}"/>
+
+
+  <!--[if IE]>
+    <script type="text/javascript">
+       var console = { log: function() {} };
+    </script>
+  <![endif]-->
+  <script type="text/javascript" src="{% static 'landing/js/nicescroll.js' %}"/>></script>
+  <script type="text/javascript" src="{% static 'landing/js/jquery.min.js' %}"/></script>
+  <script type="text/javascript" src="{% static 'landing/js/jquery-ui.min.js' %}"/></script>
+  <script type="text/javascript" src="{% static 'landing/js/bootstrap.min.js' %}"/></script>
+  <script type="text/javascript" src="{% static 'landing/js/jquery.fullPage.js' %}"/></script>
+  <script type="text/javascript" src="{% static 'landing/js/examples.js' %}"/></script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section " id="section0">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="hero-img">
+            <img id="hero" class="img-responsive" src="{% static 'landing/img/angry.png' %}"/>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <h1 class="header">Fckup.io</h1>
+          <div class="top-spacing-60">
+            <h2>Be responsible for your words<br> or be punished</h2>
+          </div>
+          <div class="top-spacing-80">
+            <a href="/login/facebook/" class="btn btn-fuckup">Don`t fuck up anymore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="section1">
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="row center">
+          <h2 class="header">How it works</h2>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-2 first-in">
+            <div class="img-box">
+              <img class="img-responsive" src="{% static 'landing/img/first.png' %}"/>
+            </div>
+            <h3>Log in with your<br> facebook</h3>
+          </div>
+          <div class="col-sm-3 col-sm-offset-3 top-spacing-80 second-in">
+            <div class="img-box">
+              <img class="img-responsive" src="{% static 'landing/img/second.png' %}"/>
+            </div>
+            <h3>Create your task <br> assign deadline</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-2 third-in">
+            <div class="img-box">
+              <img class="img-responsive" src="{% static 'landing/img/second.png' %}"/>
+            </div>
+            <h3>Ask someone to<br> check your work<br> progress</h3>
+          </div>
+
+          <div class="col-sm-3 col-sm-offset-3 top-spacing-80 fourth-in">
+            <div class="img-box">
+              <img class="img-responsive" src="{% static 'landing/img/second.png' %}"/>
+            </div>
+            <h3>Get shit done and<br> or be punished!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="index.html#explore" class="scrollto" id="moveSectionDown">
+  <p>SCROLL DOWN TO EXPLORE</p>
+  <p class="scrollto--arrow"><img src="{% static 'landing/img/scroll_down.png' %}" alt="scroll down arrow"></p>
+</a>
+
+</body>
+</html>
