@@ -9,8 +9,8 @@ if (typeof window.angular !== 'undefined') {
     dealsDS.getAllDeals().then(function(tasks){
       var allDeals = tasks.objects;
 
-      $scope.deals = _.filter(allDeals, {completed: false});
-      $scope.fuckups = _.filter(allDeals, {fuckuped: true});
+      $scope.deals = _.filter(allDeals, {complete: false});
+      $rootScope.fuckups = _.filter(allDeals, {fucked_up: true});
     });
 
     // $scope.fuckups = [
@@ -20,10 +20,18 @@ if (typeof window.angular !== 'undefined') {
 
     $scope.addDeal = function(){
       $scope.deals.push($scope.newDeal);
-      dealsDS.addNewDeal($scope.newDeal).then(function(){
+      var newDeal = {
+        title: $scope.newDeal.title,
+        deadline: $scope.newDeal.deadline
+      }
+      dealsDS.addNewDeal(newDeal).then(function(){
         $scope.newDeal.title = null;
         $scope.newDeal.deadline = null;
       })
+    };
+
+    $scope.toggleMenu = function(){
+      $rootScope.rightPaneActive = !$rootScope.rightPaneActive
     };
 
   }]);

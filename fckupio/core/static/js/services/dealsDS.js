@@ -6,14 +6,13 @@ if (typeof angular !== 'undefined') {
   angular.appServices.service('dealsDS', ['$rootScope','Restangular', function($rootScope, $restangular) {
     'use strict';
 
-    var dealsData = $restangular.one('api/task');
 
     this.getAllDeals = function () {
-      return dealsData.get();
+      return $restangular.one('task').get();
     };
 
     this.addNewDeal = function (deal) {
-      return dealsData.post(deal);
+      return $restangular.all('task').post(deal);
     };
 
     this.completeDeal = function (deal, dealId) {

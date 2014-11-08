@@ -95,6 +95,11 @@ a:after {
 
 /* CONFIGURATION FOR Feedo */
 
+body {
+  position: relative;
+  height: 100%;
+}
+
 .site {
 	background: white;
 	margin-top: 20px;
@@ -135,6 +140,20 @@ a:after {
   margin-top: 20px;
 }
 
+.menu {
+  position: absolute;
+  margin: 0px;
+  height: 100%;
+  top: 0;
+  right: -200px;
+  bottom: 0;
+  width: 200px;
+  padding: 20px;
+}
+
+.menu.open {
+  right: 0;
+}
 
 .post {
 	display: block;

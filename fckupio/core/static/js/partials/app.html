@@ -12,7 +12,7 @@
 
       <div class="site-title clearfix">
         <h2>Current deals</h2>
-        <span ng-click="rightPaneActive = !rightPaneActive" class="glyphicon glyphicon-tasks menu-btn"></span>
+        <span ng-click="toggleMenu()" class="glyphicon glyphicon-tasks menu-btn"></span>
       </div>
 
       <div ng-repeat="deal in deals" class="post">
@@ -42,20 +42,6 @@
           </form>
         </div>
       </div><!-- /col-md-6 -->
-    </div>
-
-    <div class="col-md-3 sidebar centered" ng-show="rightPaneActive" ng-class="{'animated flipInX': rightPaneActive}">
-      <img src="img/fuckblur.png" class="logo" width="80" height="80" class="img-rounded">
-      <h4>Hello, Nick!</h4>
-      <a href="" class="btn btn-sm btn-primary">Logout</a>
-      <hr>
-      <h5>Your fuck-ups, bitch:</h5>
-      <ul class="list-unstyled">
-        <li ng-repeat="deal in fuckups">
-          - {{ deal.title }}
-        </li>
-      </ul>
-      <span>Total: {{ fuckups.length }}</span>
     </div>
   </div>
 </div>

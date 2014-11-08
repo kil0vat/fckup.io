@@ -27,6 +27,16 @@
     <div ui-view></div>
   </div>
 
+  <div class="menu centered" ng-show="rightPaneActive" ng-class="{'animated bounceInRight open': rightPaneActive}">
+    <img src="img/fuckblur.png" class="logo" width="80" height="80" class="img-rounded">
+    <h4>Hello, Dude!</h4>
+    <a href="" class="btn btn-sm btn-primary btn-fup">Logout</a>
+    <br>
+    <br>
+    <span>Total fuck-ups: {{ fuckups.length }}</span>
+
+  </div>
+
   <footer>
     <p>© Fckup.io 2014</p>
   </footer>

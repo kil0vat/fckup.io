@@ -1,7 +1,9 @@
 window.app = angular.module('app', ['restangular', 'ui.router', 'appControllers', 'appServices']);
 
 // Application Level State
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', function($stateProvider, $urlRouterProvider, RestangularProvider) {
+
+  RestangularProvider.setBaseUrl("/api");
 
   $urlRouterProvider.otherwise('');
 
