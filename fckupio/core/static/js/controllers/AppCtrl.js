@@ -11,7 +11,9 @@ if (typeof window.angular !== 'undefined') {
       var allDeals = tasks.objects;
 
       $scope.deals = _.filter(allDeals, {complete: false});
-      $rootScope.fuckups = _.filter(allDeals, {fucked_up: true});
+      $rootScope.fuckups = _.filter(allDeals, function(deal){
+        return deal.fucked_up === true && deal.participant.pk === userId
+      });
     });
 
     $scope.addDeal = function(){
