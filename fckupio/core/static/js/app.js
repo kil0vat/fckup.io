@@ -33,8 +33,8 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
           $scope.deal.fucked_up = false;
           $scope.deal.put().then(function(){
             showMessage(true, {
-              title: "Greetings, dude!",
-              text: "You've just approved the deal! Nice work",
+              title: "Nice work!",
+              text: "You've just approved the deal!",
             });
           });
         }
@@ -46,8 +46,8 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
           $scope.deal.fucked_up = true;
           $scope.deal.put().then(function(){
             showMessage(false, {
-              title: "Nice job, dude!",
-              text: "You've just made an pain in the ass for your companion. LOL",
+              title: "Greetings!",
+              text: "You've just made an pain in the ass for your companion...",
             });
           });
         }
