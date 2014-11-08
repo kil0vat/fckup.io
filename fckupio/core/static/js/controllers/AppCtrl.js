@@ -4,7 +4,8 @@ if (typeof window.angular !== 'undefined') {
   }
 
   angular.appControllers.controller('AppCtrl', ['$scope', '$rootScope', '$state', 'dealsDS', function ($scope, $rootScope, $state, dealsDS) {
-    $scope.tasks = "LOLAAAA";
+
+    $rootScope.staticUrl = staticUrl;
 
     dealsDS.getAllDeals().then(function(tasks){
       var allDeals = tasks.objects;
@@ -19,12 +20,14 @@ if (typeof window.angular !== 'undefined') {
     // ]
 
     $scope.addDeal = function(){
-      $scope.deals.push($scope.newDeal);
       var newDeal = {
         title: $scope.newDeal.title,
         deadline: $scope.newDeal.deadline
-      }
+      };
+      
       dealsDS.addNewDeal(newDeal).then(function(){
+        $scope.deals.push($scope.newDeal);
+
         $scope.newDeal.title = null;
         $scope.newDeal.deadline = null;
       })

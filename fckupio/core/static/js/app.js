@@ -11,17 +11,12 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', funct
     .state('app', {
       url: '',
       controller: 'AppCtrl',
-      templateUrl: 'js/partials/app.html',
+      templateUrl: staticUrl + 'js/partials/app.html',
     })
     .state('deal', {
       url: 'deal/:id',
       controller: 'DealCtrl',
-      templateUrl: 'js/partials/deal.html',
-    })
-    .state('404', {
-      url: '/404',
-      templateUrl: 'js/core/templates/404.tpl.html',
-      controller: 'AppCtrl'
+      templateUrl: staticUrl + 'js/partials/deal.html',
     });
 
 }]);
