@@ -13,6 +13,7 @@ class TaskResource(ModelResource):
 
     class Meta:
         queryset = Task.objects.all()
+        always_return_data = True
         resource_name = 'task' 
         filtering = {
           #"creator"  :   ['exact', 'range'],
