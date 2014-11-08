@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from tastypie.fields import ForeignKey
 from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
-from tastypie.authentication import BasicAuthentication
+from tastypie.authentication import BasicAuthentication, SessionAuthentication
 from .models import Task
 
 
@@ -19,10 +19,16 @@ class TaskResource(ModelResource):
           "reviewer": ALL_WITH_RELATIONS,
           "participant": ALL_WITH_RELATIONS,
         }
+        authentication = SessionAuthentication()
+
     def dehydrate(self, bundle):
         bundle.data['creator'] = bundle.obj.creator.id if bundle.obj.creator else None
         bundle.data['participant'] = bundle.obj.participant.id if bundle.obj.participant else None
         bundle.data['reviewer'] = bundle.obj.reviewer.id if bundle.obj.reviewer else None
+        return bundle
+
+    def hydrate(self, bundle):
+        bundle.obj.creator = bundle.request.user
         return bundle
 
 
