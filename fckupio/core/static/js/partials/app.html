@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 sidebar">
+      <div>
+        <img src="" class="logo" width="80" height="80">
+        <h4>Fckup.io</h4>
+        <p>
+          Don't fuck up. Don't even try.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 col-md-offset-1 site">
+
+      <div class="site-title clearfix">
+        <h2>Current deals</h2>
+      </div>
+
+      <div ng-repeat="deal in deals" class="post">
+        <h4 ng-bind="deal.title"></h4>
+        <small ng-bind="deal.deadline | date:'MMM d, h:mm a'">7 Nov 2014, 5:00 pm</small>
+      </div>
+
+
+      <div class="post clearfix">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" ng-model="newDeal.title" placeholder="Deal text">
+            </div>
+            <div class="col-sm-3">
+              <input type="date" class="form-control" ng-model="newDeal.deadline" placeholder="Deadline">
+            </div>
+            <div class="col-sm-2">
+              <button type="button" class="btn btn-primary" ng-click="addDeal()">Add one</button>
+            </div>
+          </form>
+        </div>
+
+      </div><!-- /col-md-6 -->
+    </div><!-- --/row ---->
+    <div class="col-md-3 sidebar">
+      <h4>Your fuck-ups</h4>
+    </div>
+  </div>
+</div>
